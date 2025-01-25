@@ -69,12 +69,9 @@ components:
         patientId:
           type: string
           description: Patient ID
-        deparmentId:
+        departmentId:
           type: string
           description: Department ID
-        title:
-          type: string
-          description: Notification Title
     ServiceInfo:
       properties:
         name:
