@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: Appointments Service
+  description: Appointments Service
+  version: 1.0.0
+  contact:
+    email: salaboy@gmail.com
+    name: Mauricio Salatino
+    url: https://salaboy.com
+servers:
+  - url: http://localhost:8081
+paths:
+  /:
+    get:
+      summary: Welcome
+      operationId: welcome
+      tags:
+        - welcome
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/Welcome"
+  /appointments/:
+    post:
+      summary: Create Appointment
+      operationId: createAppointment
+      tags:
+        - appointments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Appointment"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/Appointment"
+    get:
+      summary: Get All Appointments
+      operationId: getAllAppointments
+      tags:
+        - appointments
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Appointment"
+  /service/info:
+    get:
+      summary: Get Service Info
+      operationId: getServiceInfo
+      tags:
+        - service
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/ServiceInfo"
+components:
+  schemas:
+    Appointment:
+      properties:
+        id:
+          type: string
+          description: Appointment ID
+        patientId:
+          type: string
+          description: Patient ID
+        departmentId:
+          type: string
+          description: Department ID
+    ServiceInfo:
+      properties:
+        name:
+          type: string
+          description: Service Name
+        version:
+          type: string
+          description: Service Version
+        source:
+          type: string
+          description: Service Source
+        podId:
+          type: string
+          description: Service Pod ID
+        podNamespace:
+          type: string
+          description: Service Pod Namespace
+        podNodeName:
+          type: string
+          description: Service Pod Node Name
+    Welcome:
+      properties:
+        message:
+          type: string
+          description: Welcome Message
