@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	api "github.com/salaboy/devex-on-k8s/app/go/hospital-app/appointments/api"
 
@@ -37,9 +38,10 @@ type ServiceInfo struct {
 }
 
 type Appointment struct {
-	Id           string `json:"id"`
-	PatientId    string `json:"patientId"`
-	DepartmentId string `json:"departmentId"`
+	Id           string    `json:"id"`
+	PatientId    string    `json:"patientId"`
+	DepartmentId string    `json:"departmentId"`
+	Date         time.Time `json:"dateAndTime"`
 }
 
 func (s Appointment) MarshalBinary() ([]byte, error) {
@@ -54,7 +56,7 @@ var (
 	POD_NODENAME        = getEnv("POD_NODENAME", "N/A")
 	POD_IP              = getEnv("POD_IP", "N/A")
 	POD_SERVICE_ACCOUNT = getEnv("POD_SERVICE_ACCOUNT", "N/A")
-	APP_PORT            = getEnv("APP_PORT", "8080")
+	APP_PORT            = getEnv("APP_PORT", "8081")
 
 	appointments = []Appointment{}
 )
@@ -130,12 +132,12 @@ func OpenAPI(r *chi.Mux) {
 	r.Handle("/openapi/*", http.StripPrefix("/openapi/", fs))
 }
 
-// GetAllNotifications returns all appointments.
+// GetAllAppointments returns all appointments.
 func (s *server) GetAllAppointments(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, appointments)
 }
 
-// CreateNotification creates a new appointment.
+// CreateAppointment creates a new appointment.
 func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
 
 	var appointment Appointment
