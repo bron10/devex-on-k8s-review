@@ -5,6 +5,7 @@ go 1.21
 toolchain go1.21.0
 
 require (
+	github.com/cloudflare/cfssl v1.6.4
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/chi/v5 v5.0.10
 	github.com/google/uuid v1.3.1
