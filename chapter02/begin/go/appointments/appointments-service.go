@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -12,57 +13,17 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
+	_ "github.com/lib/pq"
 )
-
-const (
-	ApplicationJson = "application/json"
-	ContentType     = "Content-Type"
-)
-
-// Event struct to encode events data
-type Event struct {
-	Id      string `json:"id"`
-	Payload string `json:"payload"`
-	Type    string `json:"type"`
-}
-
-type ServiceInfo struct {
-	Name              string `json:"name"`
-	Version           string `json:"version"`
-	Source            string `json:"source"`
-	PodName           string `json:"podName"`
-	PodNamespace      string `json:"podNamespace"`
-	PodNodeName       string `json:"podNodeName"`
-	PodIp             string `json:"podIp"`
-	PodServiceAccount string `json:"podServiceAccount"`
-}
-
-type Appointment struct {
-	Id           string    `json:"id"`
-	PatientId    string    `json:"patientId"`
-	DepartmentId string    `json:"departmentId"`
-	Date         time.Time `json:"dateAndTime"`
-}
-
-type Welcome struct {
-	Message string `json:"message"`
-}
-
-func (s Appointment) MarshalBinary() ([]byte, error) {
-	return json.Marshal(s)
-}
 
 var (
-	VERSION             = getEnv("VERSION", "1.0.0")
-	SOURCE              = getEnv("SOURCE", "https://github.com/")
-	POD_NAME            = getEnv("POD_NAME", "N/A")
-	POD_NAMESPACE       = getEnv("POD_NAMESPACE", "N/A")
-	POD_NODENAME        = getEnv("POD_NODENAME", "N/A")
-	POD_IP              = getEnv("POD_IP", "N/A")
-	POD_SERVICE_ACCOUNT = getEnv("POD_SERVICE_ACCOUNT", "N/A")
-	APP_PORT            = getEnv("APP_PORT", "8081")
-
-	appointments = []Appointment{}
+	VERSION            = getEnv("VERSION", "1.0.0")
+	SOURCE             = getEnv("SOURCE", "https://github.com/")
+	APP_PORT           = getEnv("APP_PORT", "8081")
+	PostgresqlHost     = getEnv("POSTGRES_HOST", "localhost")
+	PostgresqlPort     = getEnv("POSTGRES_PORT", "5432")
+	PostgresqlUsername = getEnv("POSTGRES_USERNAME", "postgres")
+	PostgresqlPassword = getEnv("POSTGRES_PASSWORD", "postgres")
 )
 
 // respondWithJSON is a helper function to write a JSON response.
@@ -104,9 +65,18 @@ func NewChiServer() *chi.Mux {
 	// add middlewares
 	r.Use(middleware.Logger)
 
-	// create new server
-	server := NewServer()
+	// connect to database
+	db := NewDB()
 
+	// check if database is alive
+	err := db.Ping()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("Connected to PostgreSQL.")
+
+	// create new server
+	server := NewServer(db)
 	// add openapi spec
 	OpenAPI(r)
 
@@ -123,11 +93,14 @@ func NewChiServer() *chi.Mux {
 
 // server is the API server struct that implements api.ServerInterface.
 type server struct {
+	DB *sql.DB
 }
 
 // NewServer creates a new api.ServerInterface.
-func NewServer() api.ServerInterface {
-	return &server{}
+func NewServer(db *sql.DB) api.ServerInterface {
+	return &server{
+		DB: db,
+	}
 }
 
 // OpenApi returns a handler that serves the OpenAPI spec as JSON.
@@ -138,36 +111,67 @@ func OpenAPI(r *chi.Mux) {
 
 // GetAllAppointments returns all appointments.
 func (s *server) GetAllAppointments(w http.ResponseWriter, r *http.Request) {
+	var query = "SELECT id, patientId, departmentId, appointmentDate FROM Appointments a"
+	var rows *sql.Rows
+	var err error
+
+	rows, err = s.DB.Query(query)
+
+	if err != nil {
+		log.Printf("There was an error executing the query %v", err)
+	}
+
+	defer rows.Close()
+	var appointments []Appointment
+	for rows.Next() {
+
+		var appointment Appointment
+		err = rows.Scan(&appointment.Id, &appointment.PatientId, &appointment.DepartmentId, &appointment.AppointmentDate)
+		if err != nil {
+			log.Printf("There was an error scanning the sql rows: %v", err)
+		}
+		appointments = append(appointments, appointment)
+
+	}
+
+	log.Printf("Appointments retrieved from Database: %d", len(appointments))
 	respondWithJSON(w, http.StatusOK, appointments)
 }
 
 // CreateAppointment creates a new appointment.
 func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
-
 	var appointment Appointment
 	err := json.NewDecoder(r.Body).Decode(&appointment)
 	if err != nil {
 		log.Printf("There was an error decoding the request body into the struct: %v", err)
+		respondWithJSON(w, http.StatusInternalServerError, err)
+		return
 	}
 
 	appointment.Id = uuid.New().String()
 
-	appointments = append(appointments, appointment)
+	insertStmt := `insert into Appointments(id, patientId, departmentId, appointmentDate) values($1, $2, $3, $4)`
+
+	_, err = s.DB.Exec(insertStmt, appointment.Id, appointment.PatientId, appointment.DepartmentId, appointment.AppointmentDate)
+
+	if err != nil {
+		log.Printf("An error occurred while executing query: %v", err)
+		respondWithJSON(w, http.StatusInternalServerError, err)
+		return
+	}
+
+	log.Printf("Appointment Stored in Database: %v", appointment)
 
 	respondWithJSON(w, http.StatusOK, appointment)
+
 }
 
 // GetServiceInfo returns service information.
 func (s *server) GetServiceInfo(w http.ResponseWriter, r *http.Request) {
 	var info ServiceInfo = ServiceInfo{
-		Name:              "APPOINTMENTS",
-		Version:           VERSION,
-		Source:            SOURCE,
-		PodName:           POD_NAME,
-		PodNodeName:       POD_NODENAME,
-		PodNamespace:      POD_NAMESPACE,
-		PodIp:             POD_IP,
-		PodServiceAccount: POD_SERVICE_ACCOUNT,
+		Name:    "APPOINTMENTS",
+		Version: VERSION,
+		Source:  SOURCE,
 	}
 	w.Header().Set(ContentType, ApplicationJson)
 	json.NewEncoder(w).Encode(info)
@@ -180,4 +184,42 @@ func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set(ContentType, ApplicationJson)
 	json.NewEncoder(w).Encode(welcome)
+}
+
+func NewDB() *sql.DB {
+	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/postgres?sslmode=disable"
+	log.Printf("Connecting to Database: %s.", connStr)
+	// Connect to database
+
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return db
+}
+
+const (
+	ApplicationJson = "application/json"
+	ContentType     = "Content-Type"
+)
+
+type ServiceInfo struct {
+	Name    string `json:"name"`
+	Version string `json:"version"`
+	Source  string `json:"source"`
+}
+
+type Appointment struct {
+	Id              string    `json:"id"`
+	PatientId       string    `json:"patientId"`
+	DepartmentId    string    `json:"departmentId"`
+	AppointmentDate time.Time `json:"appointmentDate"`
+}
+
+type Welcome struct {
+	Message string `json:"message"`
+}
+
+func (s Appointment) MarshalBinary() ([]byte, error) {
+	return json.Marshal(s)
 }

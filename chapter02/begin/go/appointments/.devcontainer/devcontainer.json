@@ -3,7 +3,9 @@
 {
 	"name": "Go",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -15,7 +17,8 @@
 		"vscode": {
 			"settings": {},
 			"extensions": [
-				"streetsidesoftware.code-spell-checker"
+				"streetsidesoftware.code-spell-checker",
+				"ckolkman.vscode-postgres"
 			]
 		}
 	},
