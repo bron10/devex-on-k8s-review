@@ -77,13 +77,9 @@ func NewChiServer() *chi.Mux {
 	server := NewServer(db)
 
 	// add routes
+	r.Get("/", server.Welcome)
 	r.Get("/appointments/", server.GetAllAppointments)
 	r.Post("/appointments/", server.CreateAppointment)
-
-	// add health check
-	r.HandleFunc("/health/{endpoint:readiness|liveness}", func(w http.ResponseWriter, r *http.Request) {
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-	})
 
 	return r
 }
@@ -157,17 +153,6 @@ func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// GetServiceInfo returns service information.
-func (s *server) GetServiceInfo(w http.ResponseWriter, r *http.Request) {
-	var info ServiceInfo = ServiceInfo{
-		Name:    "APPOINTMENTS",
-		Version: VERSION,
-		Source:  SOURCE,
-	}
-	w.Header().Set(ContentType, ApplicationJson)
-	json.NewEncoder(w).Encode(info)
-}
-
 // Welcome returns a welcome message from the Appointments Service
 func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 	var welcome Welcome = Welcome{
@@ -193,12 +178,6 @@ const (
 	ApplicationJson = "application/json"
 	ContentType     = "Content-Type"
 )
-
-type ServiceInfo struct {
-	Name    string `json:"name"`
-	Version string `json:"version"`
-	Source  string `json:"source"`
-}
 
 type Appointment struct {
 	Id              string    `json:"id"`
