@@ -3,24 +3,24 @@
 {
 	"name": "Go",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { 
-      "dockerfile": "Dockerfile" 
-  	},
-
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": { 
+	"features": {
 		// This gives me connection refused when I run docker compose up to connect to PostgreSQL
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-      		"version": "26.1.4"
-    	}
+			"version": "26.1.4"
+		}
 	},
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			"codespaces": {
-			  "openFiles": ["README.md"]
+				"openFiles": [
+					"README.md"
+				]
 			},
 			"settings": {},
 			"extensions": [
@@ -30,10 +30,10 @@
 			]
 		}
 	},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8081],
-
+	"forwardPorts": [
+		8081
+	],
 	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
 	// More info: https://containers.dev/implementors/json_reference/#port-attributes
 	"portsAttributes": {
@@ -42,10 +42,8 @@
 			"onAutoForward": "notify"
 		}
 	},
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "go version",
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	//"remoteUser": "root"
 }
