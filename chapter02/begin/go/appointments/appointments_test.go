@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -19,43 +20,25 @@ func testServer() *httptest.Server {
 
 func Test_API(t *testing.T) {
 
-	// Start docker compose with Dagger??
+	//
 
 	// test server
 	ts := testServer()
 	defer ts.Close()
 
-	t.Run("It should return 200 when a POST request is made to '/appointments/' (accepted)", func(t *testing.T) {
-		// arrange
-		var accepted bool = true
-		appointment := appointmentFake(accepted)
+	t.Run("It should empty when a GET request is made to '/appointments/'", func(t *testing.T) {
+		// prepare
+		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments/", ts.URL), nil)
 
-		appointmentAsBytes, _ := appointment.MarshalBinary()
+		client := &http.Client{}
+		_, err := client.Do(req)
 
-		// act
-		resp, _ := http.Post(fmt.Sprintf("%s/appointments/", ts.URL), "application/json", bytes.NewBuffer(appointmentAsBytes))
+		assert.NoError(t, err)
 
-		// assert
-		assert.Equal(t, http.StatusOK, resp.StatusCode)
-	})
-
-	t.Run("It should return 200 when a POST request is made to '/appointments/' (not accepted)", func(t *testing.T) {
-		// arrange
-		var accepted bool = false
-		appointment := appointmentFake(accepted)
-
-		appointmentAsBytes, _ := appointment.MarshalBinary()
-
-		// act
-		resp, _ := http.Post(fmt.Sprintf("%s/appointments/", ts.URL), "application/json", bytes.NewBuffer(appointmentAsBytes))
-
-		// assert
-		assert.Equal(t, http.StatusOK, resp.StatusCode)
-	})
-
-	t.Run("It should return 200 when a GET request is made to '/appointments/'", func(t *testing.T) {
 		// arrange, act
 		resp, err := http.Get(fmt.Sprintf("%s/appointments/", ts.URL))
+
+		assert.NoError(t, err)
 
 		defer resp.Body.Close()
 
@@ -65,10 +48,52 @@ func Test_API(t *testing.T) {
 		// assert
 		assert.NoError(t, err)
 		assert.Equal(t, http.StatusOK, resp.StatusCode)
-		assert.True(t, len(appointments) > 0)
+		assert.Equal(t, 0, len(appointments))
+
 	})
+
+	t.Run("It should return 200 when a POST request is made to '/appointments/' ", func(t *testing.T) {
+		// prepare
+		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments/", ts.URL), nil)
+
+		client := &http.Client{}
+		_, err := client.Do(req)
+
+		assert.NoError(t, err)
+
+		// arrange
+		appointment := appointmentFake()
+
+		appointmentAsBytes, _ := appointment.MarshalBinary()
+
+		// act
+		_, err = http.Post(fmt.Sprintf("%s/appointments/", ts.URL), "application/json", bytes.NewBuffer(appointmentAsBytes))
+
+		// assert
+		assert.NoError(t, err)
+
+		// get
+		resp, err := http.Get(fmt.Sprintf("%s/appointments/", ts.URL))
+		// assert
+		assert.NoError(t, err)
+
+		defer resp.Body.Close()
+
+		var appointments []Appointment
+		json.NewDecoder(resp.Body).Decode(&appointments)
+
+		// assert
+		assert.Equal(t, http.StatusOK, resp.StatusCode)
+		assert.Equal(t, len(appointments), 1)
+		assert.NotEmpty(t, appointments[0].Id)
+		assert.Equal(t, appointments[0].PatientId, appointment.PatientId)
+	})
+
 }
 
-func appointmentFake(accepted bool) Appointment {
-	return Appointment{}
+func appointmentFake() Appointment {
+	return Appointment{
+		PatientId:       "test-patient",
+		AppointmentDate: time.Now(),
+	}
 }

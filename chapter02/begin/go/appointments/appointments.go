@@ -80,6 +80,7 @@ func NewChiServer() *chi.Mux {
 	r.Get("/", server.Welcome)
 	r.Get("/appointments/", server.GetAllAppointments)
 	r.Post("/appointments/", server.CreateAppointment)
+	r.Delete("/appointments/", server.DeleteAllAppointments)
 
 	return r
 }
@@ -98,7 +99,7 @@ func NewServer(db *sql.DB) *server {
 
 // GetAllAppointments returns all appointments.
 func (s *server) GetAllAppointments(w http.ResponseWriter, r *http.Request) {
-	var query = "SELECT id, patientId, departmentId, appointmentDate FROM Appointments a"
+	var query = "SELECT id, patientId, appointmentDate FROM Appointments a"
 	var rows *sql.Rows
 	var err error
 
@@ -109,11 +110,11 @@ func (s *server) GetAllAppointments(w http.ResponseWriter, r *http.Request) {
 	}
 
 	defer rows.Close()
-	var appointments []Appointment
+	appointments := []Appointment{}
 	for rows.Next() {
 
 		var appointment Appointment
-		err = rows.Scan(&appointment.Id, &appointment.PatientId, &appointment.DepartmentId, &appointment.AppointmentDate)
+		err = rows.Scan(&appointment.Id, &appointment.PatientId, &appointment.AppointmentDate)
 		if err != nil {
 			log.Printf("There was an error scanning the sql rows: %v", err)
 		}
@@ -123,6 +124,22 @@ func (s *server) GetAllAppointments(w http.ResponseWriter, r *http.Request) {
 
 	log.Printf("Appointments retrieved from Database: %d", len(appointments))
 	respondWithJSON(w, http.StatusOK, appointments)
+}
+
+// DeleteAllAppointments delete all appointments.
+func (s *server) DeleteAllAppointments(w http.ResponseWriter, r *http.Request) {
+	var deleteStmt = "DELETE FROM Appointments"
+
+	var err error
+
+	_, err = s.DB.Exec(deleteStmt)
+
+	if err != nil {
+		log.Printf("There was an error executing the query %v", err)
+	}
+
+	log.Printf("All Appointments deleted from Database.")
+	respondWithJSON(w, http.StatusOK, "")
 }
 
 // CreateAppointment creates a new appointment.
@@ -137,9 +154,9 @@ func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
 
 	appointment.Id = uuid.New().String()
 
-	insertStmt := `insert into Appointments(id, patientId, departmentId, appointmentDate) values($1, $2, $3, $4)`
+	insertStmt := `insert into Appointments(id, patientId, appointmentDate) values($1, $2, $3)`
 
-	_, err = s.DB.Exec(insertStmt, appointment.Id, appointment.PatientId, appointment.DepartmentId, appointment.AppointmentDate)
+	_, err = s.DB.Exec(insertStmt, appointment.Id, appointment.PatientId, appointment.AppointmentDate)
 
 	if err != nil {
 		log.Printf("An error occurred while executing query: %v", err)
@@ -182,7 +199,6 @@ const (
 type Appointment struct {
 	Id              string    `json:"id"`
 	PatientId       string    `json:"patientId"`
-	DepartmentId    string    `json:"departmentId"`
 	AppointmentDate time.Time `json:"appointmentDate"`
 }
 
