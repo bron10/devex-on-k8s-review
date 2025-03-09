@@ -1,45 +1,45 @@
 {
 	"name": "Java",
-  "build": { 
-    "dockerfile": "Dockerfile" 
-  },
+    "build": { 
+        "dockerfile": "Dockerfile" 
+    },
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-      "version": "23",
-      "jdkDistro": "graalce"
-    },
+            "version": "23",
+            "jdkDistro": "graalce"
+        },
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	},
+},
 
 	"customizations": {
-    "codespaces": {
-      "openFiles": ["README.md"]
+        "codespaces": {
+            "openFiles": ["README.md"]
+        },
+        "vscode": {
+            "extensions": [
+                "vmware.vscode-boot-dev-pack",
+                "redhat.vscode-yaml"
+            ]
+        }
     },
-    "vscode": {
-      "extensions": [
-        "vmware.vscode-boot-dev-pack",
-        "redhat.vscode-yaml"
-      ]
-    }
-  },
 
 	"forwardPorts": [
-    8080
-  ],
+        8080
+    ],
 
-  "portsAttributes": {
-    "8080": {
-      "label": "Spring Boot Application"
-    }
-  },
+    "portsAttributes": {
+        "8080": {
+            "label": "Spring Boot Application"
+        }
+    },
 
 	"postCreateCommand": "java -version",
 
 	"remoteUser": "root",
 
-  "mounts": [
-    "source=${localEnv:HOME}/.gradle,target=/home/vscode/.gradle,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
-  ]
+    "mounts": [
+        "source=${localEnv:HOME}/.gradle,target=/home/vscode/.gradle,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
+    ]
 }
