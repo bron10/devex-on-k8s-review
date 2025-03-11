@@ -14,31 +14,31 @@ This application is part of the Min Salus system and provides the functionality 
 Get the welcome message:
 
 ```shell script
-http :8080
+http :8081
 ```
 
 Book an appointment without a category:
 
 ```shell script
-http :8080/appointments patientId=42 appointmentDate="2028-02-29T12:00:00Z"
+http :8081/appointments patientId=42 appointmentDate="2028-02-29T12:00:00Z"
 ```
 
 Book an appointment with a category:
 
 ```shell script
-http :8080/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
+http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
 ```
 
 Get all appointments:
 
 ```shell script
-http :8080/appointments
+http :8081/appointments
 ```
 
 Delete all appointments:
 
 ```shell script
-http DELETE :8080/appointments
+http DELETE :8081/appointments
 ```
 
 ## Run

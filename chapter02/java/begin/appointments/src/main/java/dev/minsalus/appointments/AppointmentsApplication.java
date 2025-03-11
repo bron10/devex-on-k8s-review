@@ -39,6 +39,10 @@ public class AppointmentsApplication {
 
 }
 
-record Appointment(@Id Long id, Long patientId, Instant appointmentDate) {}
+record Appointment(@Id Long id, Long patientId, Instant appointmentDate) {
+    public static Appointment with(Long patientId, Instant appointmentDate) {
+        return new Appointment(null, patientId, appointmentDate);
+    }
+}
 
 interface AppointmentRepository extends ListCrudRepository<Appointment, Long> {}

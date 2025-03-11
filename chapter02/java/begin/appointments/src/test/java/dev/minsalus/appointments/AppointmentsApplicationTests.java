@@ -36,7 +36,7 @@ class AppointmentsApplicationTests {
 
     @Test
     void appointmentsShouldBeReturned() {
-        var appointment = new Appointment(null, 1L, Instant.now());
+        var appointment = Appointment.with(1L, Instant.now());
         appointmentRepository.save(appointment);
 
         webTestClient.get()
@@ -55,7 +55,7 @@ class AppointmentsApplicationTests {
 
     @Test
     void appointmentShouldBeCreated() {
-        var appointment = new Appointment(null, 2L, Instant.now());
+        var appointment = Appointment.with(2L, Instant.now());
 
         webTestClient.post()
             .uri("/appointments")
@@ -69,7 +69,7 @@ class AppointmentsApplicationTests {
 
     @Test
 	void appointmentsShouldBeDeleted() {
-		var appointment = new Appointment(null, 3L, Instant.now());
+		var appointment = Appointment.with(3L, Instant.now());
 		appointmentRepository.save(appointment);
 
 		webTestClient.delete()

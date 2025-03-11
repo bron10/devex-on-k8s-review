@@ -1,3 +1,6 @@
 spring:
   application:
     name: appointments
+
+server:
+  port: 8081

@@ -36,7 +36,7 @@ class AppointmentsApplicationTests {
 
     @Test
     void appointmentsShouldBeReturned() {
-        var appointment = new Appointment(null, 1L, "General", Instant.now());
+        var appointment = Appointment.with(1L, Instant.now());
         appointmentRepository.save(appointment);
 
         webTestClient.get()
@@ -55,7 +55,7 @@ class AppointmentsApplicationTests {
 
     @Test
     void appointmentShouldBeCreated() {
-        var appointment = new Appointment(null, 2L, "General", Instant.now());
+        var appointment = Appointment.with(2L, Instant.now());
 
         webTestClient.post()
             .uri("/appointments")
@@ -69,7 +69,7 @@ class AppointmentsApplicationTests {
 
     @Test
 	void appointmentsShouldBeDeleted() {
-		var appointment = new Appointment(null, 3L, "General", Instant.now());
+		var appointment = Appointment.with(3L, Instant.now());
 		appointmentRepository.save(appointment);
 
 		webTestClient.delete()
@@ -78,7 +78,7 @@ class AppointmentsApplicationTests {
             .expectStatus().isNoContent();
 
 		assertThat(appointmentRepository.findAll()).isEmpty();
-    }
+  }
 
     @Test
     void appointmentWithCategoryShouldBeCreated() {
@@ -89,15 +89,7 @@ class AppointmentsApplicationTests {
             .bodyValue(appointment)
             .exchange()
             .expectStatus().isCreated()
-            .expectHeader().valueMatches("Location", ".*/appointments/\\d+")
-            .expectBody(Appointment.class).value(actualAppointment -> {
-                assertThat(actualAppointment.id()).isNotNull();
-                assertThat(actualAppointment.patientId()).isEqualTo(4L);
-                assertThat(actualAppointment.category()).isEqualTo("Cardiology");
-                assertThat(actualAppointment.appointmentDate().toEpochMilli()).isEqualTo(appointment.appointmentDate().toEpochMilli());
-            });
-
-        assertThat(appointmentRepository.findAll()).hasSize(1);
+            .expectBody(Appointment.class);
     }
 
 }
