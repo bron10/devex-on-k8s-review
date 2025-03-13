@@ -9,9 +9,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		// This gives me connection refused when I run docker compose up to connect to PostgreSQL
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"version": "26.1.4"
-		}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 	// Configure tool-specific properties.
 	"customizations": {
