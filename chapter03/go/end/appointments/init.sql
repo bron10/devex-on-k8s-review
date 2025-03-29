@@ -3,5 +3,4 @@ CREATE TABLE appointments(
     patientId VARCHAR NOT NULL,
     category VARCHAR NOT NULL,
     appointmentDate TIMESTAMP NOT NULL DEFAULT CURRENT_DATE
-
 );
