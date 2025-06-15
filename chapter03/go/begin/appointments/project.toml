@@ -1,0 +1,12 @@
+[_]
+schema-version = "0.2"
+
+[io.buildpacks]
+builder = "docker.io/paketobuildpacks/ubuntu-noble-builder"
+exclude = [
+    ".devcontainer",
+    ".flox"
+]
+
+[[io.buildpacks.group]]
+id = "paketo-buildpacks/go"

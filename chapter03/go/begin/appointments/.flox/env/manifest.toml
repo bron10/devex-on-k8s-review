@@ -1,0 +1,25 @@
+version = 1
+
+[install]
+crane.pkg-path = "crane"
+go.pkg-path = "go"
+httpie.pkg-path = "httpie"
+kind.pkg-path = "kind"
+kn.pkg-path = "kn"
+kubectl.pkg-path = "kubectl"
+kubectx.pkg-path = "kubectx"
+kubernetes-helm.pkg-path = "kubernetes-helm"
+kustomize.pkg-path = "kustomize"
+pack.pkg-path = "pack"
+skaffold.pkg-path = "skaffold"
+
+[vars]
+FLOX_DISABLE_METRICS="true"
+
+[options]
+systems = [
+  "aarch64-darwin",
+  "aarch64-linux",
+  "x86_64-darwin",
+  "x86_64-linux",
+]

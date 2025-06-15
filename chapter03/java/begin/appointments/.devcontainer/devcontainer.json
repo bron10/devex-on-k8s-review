@@ -1,15 +1,18 @@
 {
-	"name": "Go",
+	"name": "Java",
     "build": {
         "dockerfile": "Dockerfile"
     },
 
-	"runArgs": [
+    "runArgs": [
         "--network=host"
     ],
 
 	"features": {
-        "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "24",
+            "jdkDistro": "graalce"
+        },
         "ghcr.io/devcontainers-extra/features/apt-packages:1": {
             "packages": [
                 "httpie"
@@ -21,23 +24,23 @@
         }
 	},
 
-	"postCreateCommand": "echo '127.0.0.1   localhost' | sudo tee /etc/hosts && go version",
+    "postCreateCommand": "echo '127.0.0.1   localhost' | sudo tee /etc/hosts && java -version",
 
-	"customizations": {
+    "customizations": {
         "vscode": {
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash"
             },
             "extensions": [
-                // Go
-                "golang.go",
+                // Java
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack",
 
                 // YAML
                 "redhat.vscode-yaml",
 
-				// PostgreSQL
-				"ckolkman.vscode-postgres",
-
+                // Excluding the Gradle extension as it breaks the Spring Boot DevTools
+                "-vscjava.vscode-gradle",
                 // Excluding the Container extensions. Not needed + heavyweight.
                 "-ms-azuretools.vscode-containers",
                 "-ms-azuretools.vscode-docker"
@@ -55,14 +58,18 @@
         }
     },
 
-	"otherPortsAttributes": {
+    "otherPortsAttributes": {
         "onAutoForward": "ignore"
     },
 
-	"mounts": [
+    "mounts": [
+        // Gradle cache
+        "source=${localEnv:HOME}/.gradle,target=/home/vscode/.gradle,type=bind,consistency=cached",
+        // Maven cache
+        "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached",
         // Kubernetes config
         "source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind"
     ],
 
-	"waitFor": "postCreateCommand"
+    "waitFor": "postCreateCommand"
 }

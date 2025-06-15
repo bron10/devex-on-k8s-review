@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"embed"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -12,14 +13,16 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
+	"github.com/pressly/goose/v3"
 )
 
 var (
-	VERSION            = getEnv("VERSION", "1.0.0")
+	VERSION            = getEnv("VERSION", "0.0.1-SNAPSHOT")
 	SOURCE             = getEnv("SOURCE", "https://github.com/")
 	APP_PORT           = getEnv("APP_PORT", "8081")
 	PostgresqlHost     = getEnv("POSTGRES_HOST", "localhost")
 	PostgresqlPort     = getEnv("POSTGRES_PORT", "5432")
+	PostgresqlDatabase = getEnv("POSTGRES_DB", "postgres")
 	PostgresqlUsername = getEnv("POSTGRES_USERNAME", "postgres")
 	PostgresqlPassword = getEnv("POSTGRES_PASSWORD", "postgres")
 )
@@ -66,21 +69,14 @@ func NewChiServer() *chi.Mux {
 	// connect to database
 	db := NewDB()
 
-	// check if database is alive
-	err := db.Ping()
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("Connected to PostgreSQL.")
-
 	// create new server
 	server := NewServer(db)
 
 	// add routes
 	r.Get("/", server.Welcome)
-	r.Get("/appointments/", server.GetAllAppointments)
-	r.Post("/appointments/", server.CreateAppointment)
-	r.Delete("/appointments/", server.DeleteAllAppointments)
+	r.Get("/appointments", server.GetAllAppointments)
+	r.Post("/appointments", server.CreateAppointment)
+	r.Delete("/appointments", server.DeleteAllAppointments)
 
 	return r
 }
@@ -173,21 +169,40 @@ func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
 // Welcome returns a welcome message from the Appointments Service
 func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 	var welcome Welcome = Welcome{
-		Message: "Welcome: you are now talking to the Appointments Service",
+		Message: "Welcome to the Appointments API!",
 	}
 	w.Header().Set(ContentType, ApplicationJson)
 	json.NewEncoder(w).Encode(welcome)
 }
 
-func NewDB() *sql.DB {
-	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/postgres?sslmode=disable"
-	log.Printf("Connecting to Database: %s.", connStr)
-	// Connect to database
+//go:embed db/migrations/*.sql
+var embedMigrations embed.FS
 
+func NewDB() *sql.DB {
+	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/" + PostgresqlDatabase + "?sslmode=disable"
+	log.Printf("Connecting to Database: %s.", connStr)
+
+	// Open a new database connection
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// Configure goose to use embedded migrations
+	goose.SetBaseFS(embedMigrations)
+
+	// Set up goose
+	if err := goose.SetDialect("postgres"); err != nil {
+		log.Fatalf("Failed to set goose dialect: %v", err)
+	}
+
+	// Run migrations
+	if err := goose.Up(db, "db/migrations"); err != nil {
+		log.Fatalf("Failed to apply migrations: %v", err)
+	}
+
+	log.Println("SQL migrations applied successfully")
+
 	return db
 }
 
