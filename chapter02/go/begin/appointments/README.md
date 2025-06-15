@@ -60,7 +60,7 @@ podman compose down
 First, run the services the application depends on:
 
 ```shell script
-podman compose -f tests/compose.yml up -d
+podman compose up -d
 ```
 
 Run all unit and integration tests:
@@ -72,5 +72,5 @@ go test
 When you're done, stop the dependent services:
 
 ```shell script
-podman compose -f tests/compose.yml down
+podman compose down
 ```

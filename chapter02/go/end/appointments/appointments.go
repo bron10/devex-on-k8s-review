@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"embed"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -12,6 +13,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
+	"github.com/pressly/goose/v3"
 )
 
 var (
@@ -65,13 +67,6 @@ func NewChiServer() *chi.Mux {
 
 	// connect to database
 	db := NewDB()
-
-	// check if database is alive
-	err := db.Ping()
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("Connected to PostgreSQL.")
 
 	// create new server
 	server := NewServer(db)
@@ -179,15 +174,34 @@ func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(welcome)
 }
 
+//go:embed db/migrations/*.sql
+var embedMigrations embed.FS
+
 func NewDB() *sql.DB {
 	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/postgres?sslmode=disable"
 	log.Printf("Connecting to Database: %s.", connStr)
-	// Connect to database
 
+	// Open a new database connection
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// Configure goose to use embedded migrations
+	goose.SetBaseFS(embedMigrations)
+
+	// Set up goose
+	if err := goose.SetDialect("postgres"); err != nil {
+		log.Fatalf("Failed to set goose dialect: %v", err)
+	}
+
+	// Run migrations
+	if err := goose.Up(db, "db/migrations"); err != nil {
+		log.Fatalf("Failed to apply migrations: %v", err)
+	}
+
+	log.Println("SQL migrations applied successfully")
+
 	return db
 }
 
