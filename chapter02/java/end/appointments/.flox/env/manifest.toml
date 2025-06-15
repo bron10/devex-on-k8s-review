@@ -1,0 +1,17 @@
+version = 1
+
+[install]
+graalvm-ce.pkg-path = "graalvm-ce"
+graalvm-ce.version = "24.0.1"
+httpie.pkg-path = "httpie"
+
+[vars]
+FLOX_DISABLE_METRICS="true"
+
+[options]
+systems = [
+  "aarch64-darwin",
+  "aarch64-linux",
+  "x86_64-darwin",
+  "x86_64-linux",
+]

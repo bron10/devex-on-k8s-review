@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.3'
+	id 'eclipse'
+	id 'org.springframework.boot' version '3.4.6'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -9,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(23)
+		languageVersion = JavaLanguageVersion.of(24)
 	}
 }
 
@@ -18,6 +19,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'io.arconia:arconia-spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
@@ -25,7 +27,8 @@ dependencies {
 	
 	runtimeOnly 'org.postgresql:postgresql'
 
-	testAndDevelopmentOnly 'io.arconia:arconia-dev-service-postgresql'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-postgresql'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-webflux'
@@ -34,8 +37,14 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.5.3"
+		mavenBom "io.arconia:arconia-bom:0.12.0"
 	}
+}
+
+eclipse {
+  classpath {
+    baseSourceOutputDir = file('build/classes/java')
+  }
 }
 
 tasks.named('test') {
@@ -43,5 +52,5 @@ tasks.named('test') {
 }
 
 tasks.named('bootBuildImage') {
-	builder = "paketobuildpacks/builder-noble-java-tiny"
+	builder = "docker.io/paketobuildpacks/builder-noble-java-tiny"
 }

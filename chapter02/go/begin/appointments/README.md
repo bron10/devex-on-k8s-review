@@ -1,59 +1,76 @@
-# Appointments Service
+# Appointments
 
-This service allow users to schedule new appointments and list them all. 
+This application is part of the Min Salus system and provides the functionality for managing appointments. It's part of the project built in the [Developer Experience on Kubernetes](https://www.manning.com/books/developer-experience-on-kubernetes) book by [Mauricio Salatino](https://salaboy.com) and [Thomas Vitale](https://www.thomasvitale.com).
 
-## Run from source
+## HTTP API
 
-In a new terminal, start PostgreSQL:
+| Endpoint	      | Method   | Req. body   | Status | Resp. body     | Description    		   	              |
+|:---------------:|:--------:|:-----------:|:------:|:--------------:|:-------------------------------------|
+| `/`             | `GET`    |             | 200    | String         | Welcome message.                     |
+| `/appointments` | `GET`    |             | 200    | Appointment[]  | Get all the booked appointments.     |
+| `/appointments` | `POST`   | Appointment | 201    | Appointment    | Book a new appointment.              |
+| `/appointments` | `DELETE` |             | 204    |                | Delete all appointments.             |
 
-```shell
-docker compose up -d
+Get the welcome message:
+
+```shell script
+http :8081
 ```
 
-Now you can start the appointments service by running: 
+Book an appointment:
 
-```shell
+```shell script
+http :8081/appointments patientId=42 appointmentDate="2028-02-29T12:00:00Z"
+```
+
+Get all appointments:
+
+```shell script
+http :8081/appointments
+```
+
+Delete all appointments:
+
+```shell script
+http DELETE :8081/appointments
+```
+
+## Run
+
+First, run the services the application depends on:
+
+```shell script
+podman compose up -d
+```
+
+Then, run the application:
+
+```shell script
 go run appointments.go
 ```
 
-## Interacting with the appointments service
+The application will start on port `8081` by default and the process will keep running. When you're done, stop the application process with `Ctrl+C` and then stop the dependent services:
 
-List all appointments: 
-
-```shell
-http :8081/appointments/
+```shell script
+podman compose down
 ```
 
-Create a new appointment using `httpie`:
+## Test
 
-```shell
-http :8081/appointments/ < new-appointment.json
+First, run the services the application depends on:
+
+```shell script
+podman compose -f tests/compose.yml up -d
 ```
 
-Delete all appointments: 
+Run all unit and integration tests:
 
-```shell
-http delete :8081/appointments/
-```
-
-When finished stop docker compose with `docker compose down`
-
-## Testing
-
-First start the test database:
-
-```shell
-docker compose -f tests/compose.yml up
-```
-
-Then run all Go Tests:
-
-```shell
+```shell script
 go test
 ```
 
-When you're done, stop the test database:
+When you're done, stop the dependent services:
 
-```shell
-docker compose -f tests/compose.yml down
+```shell script
+podman compose -f tests/compose.yml down
 ```

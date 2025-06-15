@@ -1,47 +1,61 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
 	"name": "Go",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	// Features to add to the dev container. More info: https://containers.dev/features.
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+	"runArgs": [
+        "--network=host"
+    ],
+
 	"features": {
-		// This gives me connection refused when I run docker compose up to connect to PostgreSQL
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+        "ghcr.io/devcontainers/features/go:1": {},
+        "ghcr.io/devcontainers-extra/features/apt-packages:1": {
+            "packages": [
+                "httpie"
+            ]
+        },
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "installDockerBuildx": false,
+            "installDockerComposeSwitch": false
+        }
 	},
-	// Configure tool-specific properties.
+
+	"postCreateCommand": "echo 'alias podman=docker' >> ~/.bashrc && go version",
+
 	"customizations": {
-		"codespaces": {
-			"openFiles": [
-				"README.md"
-			]
-		},
-		// Configure properties specific to VS Code.
-		"vscode": {
-			"settings": {},
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                // Go
+                "golang.go",
+
+                // YAML
+                "redhat.vscode-yaml",
+
+				// PostgreSQL
 				"ckolkman.vscode-postgres",
-				"redhat.vscode-yaml"
-			]
-		}
-	},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+
+                // Excluding the Container extensions. Not needed + heavyweight.
+                "-ms-azuretools.vscode-containers",
+                "-ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+
 	"forwardPorts": [
 		8081
 	],
-	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
-	// More info: https://containers.dev/implementors/json_reference/#port-attributes
-	"portsAttributes": {
-		"8081": {
-			"label": "Appointments Service",
-			"onAutoForward": "notify"
-		}
-	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "go version",
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	//"remoteUser": "root"
+
+    "portsAttributes": {
+        "8081": {
+            "label": "Appointments"
+        }
+    },
+
+	"otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    },
+
+	"waitFor": "postCreateCommand"
 }

@@ -1,6 +1,6 @@
 # Appointments
 
-This application is part of the Min Salus system and provides the functionality for managing appointments. It's part of the project built in the [Developer Experience on Kubernetes](#) book by [Mauricio Salatino](https://salaboy.com) and [Thomas Vitale](https://www.thomasvitale.com).
+This application is part of the Min Salus system and provides the functionality for managing appointments. It's part of the project built in the [Developer Experience on Kubernetes](https://www.manning.com/books/developer-experience-on-kubernetes) book by [Mauricio Salatino](https://salaboy.com) and [Thomas Vitale](https://www.thomasvitale.com).
 
 ## HTTP API
 
@@ -17,7 +17,7 @@ Get the welcome message:
 http :8081
 ```
 
-Book an appointment without a category:
+Book an appointment:
 
 ```shell script
 http :8081/appointments patientId=42 appointmentDate="2028-02-29T12:00:00Z"
@@ -49,6 +49,8 @@ Run the application in development mode, with live reload:
 ./gradlew bootRun
 ```
 
+The application will start on port `8081` by default and the process will keep running, watching for changes in the source code. When you're done, stop the application process with `Ctrl+C`
+
 ## Test
 
 Run all unit and integration tests:
@@ -79,4 +81,12 @@ Package the application as an OCI image:
 
 ```shell script
 ./gradlew bootBuildImage
+```
+
+## Clean
+
+Clean the build directory:
+
+```shell script
+./gradlew clean
 ```

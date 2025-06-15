@@ -26,9 +26,9 @@ func Test_API(t *testing.T) {
 	ts := testServer()
 	defer ts.Close()
 
-	t.Run("It should empty when a GET request is made to '/appointments/'", func(t *testing.T) {
+	t.Run("It should empty when a GET request is made to '/appointments'", func(t *testing.T) {
 		// prepare
-		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments/", ts.URL), nil)
+		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments", ts.URL), nil)
 
 		client := &http.Client{}
 		_, err := client.Do(req)
@@ -36,7 +36,7 @@ func Test_API(t *testing.T) {
 		assert.NoError(t, err)
 
 		// arrange, act
-		resp, err := http.Get(fmt.Sprintf("%s/appointments/", ts.URL))
+		resp, err := http.Get(fmt.Sprintf("%s/appointments", ts.URL))
 
 		assert.NoError(t, err)
 
@@ -52,9 +52,9 @@ func Test_API(t *testing.T) {
 
 	})
 
-	t.Run("It should return 200 when a POST request is made to '/appointments/' ", func(t *testing.T) {
+	t.Run("It should return 200 when a POST request is made to '/appointments' ", func(t *testing.T) {
 		// prepare
-		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments/", ts.URL), nil)
+		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments", ts.URL), nil)
 
 		client := &http.Client{}
 		_, err := client.Do(req)
@@ -67,13 +67,13 @@ func Test_API(t *testing.T) {
 		appointmentAsBytes, _ := appointment.MarshalBinary()
 
 		// act
-		_, err = http.Post(fmt.Sprintf("%s/appointments/", ts.URL), "application/json", bytes.NewBuffer(appointmentAsBytes))
+		_, err = http.Post(fmt.Sprintf("%s/appointments", ts.URL), "application/json", bytes.NewBuffer(appointmentAsBytes))
 
 		// assert
 		assert.NoError(t, err)
 
 		// get
-		resp, err := http.Get(fmt.Sprintf("%s/appointments/", ts.URL))
+		resp, err := http.Get(fmt.Sprintf("%s/appointments", ts.URL))
 		// assert
 		assert.NoError(t, err)
 

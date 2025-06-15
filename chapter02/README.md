@@ -5,7 +5,7 @@ Developers are requested to extend the Appointment data structure to support app
 
 [Requirement](https://github.com/salaboy/devex-on-k8s/issues/1)
 
-Readers can work inside the [begin](/chapter02/begin/) directory, as the [end](/chapter02/end/) directory can be used to validate the changes that are expected to be performed. 
+Readers can work inside the [go/begin](/chapter02/go/begin/) and [java/begin](/chapter02/java/begin/) directories, while the [go/end](/chapter02/go/end/) and [java/end](/chapter02/java/end/) directories can be used to validate the changes that are expected to be performed.
 
 The idea is to go over the main activities performed by developers on the inner loop. 
 
@@ -13,22 +13,20 @@ The idea is to go over the main activities performed by developers on the inner 
 
 Install Podman, or the container runtime of your choice and VScode.
 
-
 ## Clone 
 
 [Clone this repository](https://github.com/salaboy/devex-on-k8s/):
 
 ```bash
-git clone https://github.com/salaboy/devex-on-k8s/
+git clone https://github.com/devex-on-k8s/book
 ```
 
-Then move to [chapter02/begin/go/appointments](/chapter02/begin/go/appointments/) where you can find the source code of the appointments service. 
+Then move to [chapter02/go/begin/appointments](/chapter02/go/begin/appointments/) where you can find the source code of the appointments service. 
 
 ```bash
-cd chapter02/begin/go/appointments
+cd chapter02/go/begin/appointments
 ```
 
 ## Run / Change
 
-Open the `chapter02/begin/go/appointments` directory in VSCode.
-
+Open the `chapter02/go/begin/appointments` directory in VSCode.

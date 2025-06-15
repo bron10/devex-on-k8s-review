@@ -1,45 +1,71 @@
 {
 	"name": "Java",
-    "build": { 
-        "dockerfile": "Dockerfile" 
-    },
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+    "runArgs": [
+        "--network=host"
+    ],
 
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-            "version": "23",
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "24",
             "jdkDistro": "graalce"
         },
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-},
-
-	"customizations": {
-        "codespaces": {
-            "openFiles": ["README.md"]
+        "ghcr.io/devcontainers-extra/features/apt-packages:1": {
+            "packages": [
+                "httpie"
+            ]
         },
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "installDockerBuildx": false,
+            "installDockerComposeSwitch": false
+        }
+	},
+
+    "postCreateCommand": "echo 'alias podman=docker' >> ~/.bashrc && java -version",
+
+    "customizations": {
         "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
             "extensions": [
+                // Java
+                "vscjava.vscode-java-pack",
                 "vmware.vscode-boot-dev-pack",
-                "redhat.vscode-yaml"
+
+                // YAML
+                "redhat.vscode-yaml",
+
+                // Excluding the Gradle extension as it breaks the Spring Boot DevTools
+                "-vscjava.vscode-gradle",
+                // Excluding the Container extensions. Not needed + heavyweight.
+                "-ms-azuretools.vscode-containers",
+                "-ms-azuretools.vscode-docker"
             ]
         }
     },
 
 	"forwardPorts": [
-        8081
-    ],
+		8081
+	],
 
     "portsAttributes": {
-        "8080": {
-            "label": "Spring Boot Application"
+        "8081": {
+            "label": "Appointments"
         }
     },
 
-	"postCreateCommand": "java -version",
-
-	"remoteUser": "root",
+    "otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    },
 
     "mounts": [
+        // Gradle cache
         "source=${localEnv:HOME}/.gradle,target=/home/vscode/.gradle,type=bind,consistency=cached",
+        // Maven cache
         "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
-    ]
+    ],
+
+    "waitFor": "postCreateCommand"
 }

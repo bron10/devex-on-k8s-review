@@ -1,0 +1,239 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "go": {
+        "pkg-path": "go"
+      },
+      "httpie": {
+        "pkg-path": "httpie"
+      }
+    },
+    "vars": {
+      "FLOX_DISABLE_METRICS": "true"
+    },
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ]
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/c6h9pn9a4mwgz63qdiw70ac6fv7341v9-go-1.24.3.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "go-1.24.3",
+      "pname": "go",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:16:03.079252Z",
+      "unfree": false,
+      "version": "1.24.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ps3admpzmc1ryvn9q7sw5xfd94dkrb3f-go-1.24.3"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/isgn9dhrlr1mix3swwr5h3aws839bafc-go-1.24.3.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "go-1.24.3",
+      "pname": "go",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:35:27.892049Z",
+      "unfree": false,
+      "version": "1.24.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/45bnqhyyq40p91k3cjw0farx3hn1swx6-go-1.24.3"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/jfgcva919a7bz5zr781cgar6jn6vag9s-go-1.24.3.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "go-1.24.3",
+      "pname": "go",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:54:02.472326Z",
+      "unfree": false,
+      "version": "1.24.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9z2kb6hxij7pqi0fgcn9ijhpb7ajpazs-go-1.24.3"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "go",
+      "broken": false,
+      "derivation": "/nix/store/8bavsrkczap815c77n4xyvzz4y7rx0r0-go-1.24.3.drv",
+      "description": "Go Programming language",
+      "install_id": "go",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "go-1.24.3",
+      "pname": "go",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T01:16:13.381540Z",
+      "unfree": false,
+      "version": "1.24.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/5xvi25nqmbrg58aixp4zgczilfnp7pwg-go-1.24.3"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "httpie",
+      "broken": false,
+      "derivation": "/nix/store/bdxg5rifnxjjnfcpfsh8pi12g2giry00-python3.12-httpie-3.2.4.drv",
+      "description": "Command line HTTP client whose goal is to make CLI human-friendly",
+      "install_id": "httpie",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "httpie-3.2.4",
+      "pname": "httpie",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:16:03.333157Z",
+      "unfree": false,
+      "version": "3.2.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/xy7gki5ak3v8d2yy7p6vkh4vw000c8a9-python3.12-httpie-3.2.4-dist",
+        "out": "/nix/store/sh2p1km67z504fn1gfdwf01jahqikwfr-python3.12-httpie-3.2.4"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "httpie",
+      "broken": false,
+      "derivation": "/nix/store/1zy4iqjkk7zsgbgrzb7qxiqfv95f1l6f-python3.12-httpie-3.2.4.drv",
+      "description": "Command line HTTP client whose goal is to make CLI human-friendly",
+      "install_id": "httpie",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "httpie-3.2.4",
+      "pname": "httpie",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:35:28.793670Z",
+      "unfree": false,
+      "version": "3.2.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/zyi6pl0iwvw823j8m6wr6fs6yc576pag-python3.12-httpie-3.2.4-dist",
+        "out": "/nix/store/93xhm7h1lchy5klvqhzbingayaqh4l8k-python3.12-httpie-3.2.4"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "httpie",
+      "broken": false,
+      "derivation": "/nix/store/5dgvdy43i6j9ln82v6ncrmqrahlza1j9-python3.12-httpie-3.2.4.drv",
+      "description": "Command line HTTP client whose goal is to make CLI human-friendly",
+      "install_id": "httpie",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "httpie-3.2.4",
+      "pname": "httpie",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T00:54:02.725595Z",
+      "unfree": false,
+      "version": "3.2.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/zfklbgb73zpagkrx4229bsyijclkacxn-python3.12-httpie-3.2.4-dist",
+        "out": "/nix/store/miii02j3q046j8y206imqhyqr62j3kd9-python3.12-httpie-3.2.4"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "httpie",
+      "broken": false,
+      "derivation": "/nix/store/9wwghymrb5c0illk9as0abr9dj075qrz-python3.12-httpie-3.2.4.drv",
+      "description": "Command line HTTP client whose goal is to make CLI human-friendly",
+      "install_id": "httpie",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "name": "httpie-3.2.4",
+      "pname": "httpie",
+      "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+      "rev_count": 814309,
+      "rev_date": "2025-06-13T06:09:42Z",
+      "scrape_date": "2025-06-15T01:16:14.324817Z",
+      "unfree": false,
+      "version": "3.2.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/c183p34628v1c5adl8zf0pqgabbd5wh6-python3.12-httpie-3.2.4-dist",
+        "out": "/nix/store/klvk4jm9vpjv4jmwqsxk6d4dwl77b3gp-python3.12-httpie-3.2.4"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

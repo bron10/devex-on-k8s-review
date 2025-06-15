@@ -78,9 +78,9 @@ func NewChiServer() *chi.Mux {
 
 	// add routes
 	r.Get("/", server.Welcome)
-	r.Get("/appointments/", server.GetAllAppointments)
-	r.Post("/appointments/", server.CreateAppointment)
-	r.Delete("/appointments/", server.DeleteAllAppointments)
+	r.Get("/appointments", server.GetAllAppointments)
+	r.Post("/appointments", server.CreateAppointment)
+	r.Delete("/appointments", server.DeleteAllAppointments)
 
 	return r
 }
@@ -173,7 +173,7 @@ func (s *server) CreateAppointment(w http.ResponseWriter, r *http.Request) {
 // Welcome returns a welcome message from the Appointments Service
 func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 	var welcome Welcome = Welcome{
-		Message: "Welcome: you are now talking to the Appointments Service",
+		Message: "Welcome to the Appointments API!",
 	}
 	w.Header().Set(ContentType, ApplicationJson)
 	json.NewEncoder(w).Encode(welcome)
