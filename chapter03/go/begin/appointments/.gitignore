@@ -17,3 +17,6 @@ vendor/
 appointments
 
 image-sboms/
+
+### VS Code ###
+.vscode

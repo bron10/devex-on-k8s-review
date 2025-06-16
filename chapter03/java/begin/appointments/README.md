@@ -11,6 +11,44 @@ This application is part of the Min Salus system and provides the functionality 
 | `/appointments` | `POST`   | Appointment | 201    | Appointment    | Book a new appointment.              |
 | `/appointments` | `DELETE` |             | 204    |                | Delete all appointments.             |
 
+## Build (Pack)
+
+Build the application as a container image using the Pack CLI:
+
+```shell script
+pack build appointments:0.0.1-SNAPSHOT
+```
+
+## Build (Spring Boot)
+
+Build the application as a container image using the Buildpacks integration in Spring Boot:
+
+```shell script
+./gradlew bootBuildImage
+```
+
+## Run (Compose)
+
+Run the application and its dependencies using Compose:
+
+```shell script
+podman compose up -d
+```
+
+Book an appointment:
+
+```shell script
+http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
+```
+
+Stop the application and its dependencies:
+
+```shell script
+podman compose down
+```
+
+## Other
+
 Get the welcome message:
 
 ```shell script
@@ -89,7 +127,6 @@ And finally, unprovision the PostgreSQL database:
 kubectl delete -f config/db.yml
 ```
 
-
 ## Run (Manifests)
 
 First, provision a PostgreSQL database in your local Kubernetes cluster:
@@ -120,22 +157,6 @@ When you're done, you can undeploy the application as follows:
 
 ```shell
 kubectl delete -f config
-```
-
-## Build (Spring Boot)
-
-Build the application as a container image using the Buildpacks integration in Spring Boot:
-
-```shell script
-./gradlew bootBuildImage
-```
-
-## Build (Pack)
-
-Build the application as a container image using the Pack CLI:
-
-```shell script
-pack build appointments:0.0.1-SNAPSHOT
 ```
 
 ## Clean

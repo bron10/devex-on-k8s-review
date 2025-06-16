@@ -15,6 +15,9 @@ RUN arkade get crane kubectl kubectx kubens kind kustomize helm pack && \
     chmod +x $HOME/.arkade/bin/* && \
     mv $HOME/.arkade/bin/* /usr/local/bin/
 
+RUN go install github.com/google/ko@latest && \
+    mv $GOPATH/bin/ko /usr/local/bin/
+
 RUN ARCH=$(dpkg --print-architecture) && \
     if [ "$ARCH" = "amd64" ]; then \
         SKAFFOLD_ARCH="amd64"; \

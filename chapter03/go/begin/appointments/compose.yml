@@ -2,7 +2,7 @@ services:
   appointments:
     depends_on:
       - db
-    image: appointments:0.0.1-SNAPSHOT
+    image: ko.local/appointments:0.0.1-SNAPSHOT
     restart: unless-stopped
     ports:
       - 8081:8081

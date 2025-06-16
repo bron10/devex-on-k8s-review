@@ -1,4 +1,4 @@
-module github.com/salaboy/devex-on-k8s/app/go/hospital-app/appointments
+module github.com/devex-on-k8s/book/appointments
 
 go 1.23.0
 

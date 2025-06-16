@@ -17,11 +17,12 @@ import (
 )
 
 var (
-	VERSION            = getEnv("VERSION", "1.0.0")
+	VERSION            = getEnv("VERSION", "0.0.1-SNAPSHOT")
 	SOURCE             = getEnv("SOURCE", "https://github.com/")
 	APP_PORT           = getEnv("APP_PORT", "8081")
 	PostgresqlHost     = getEnv("POSTGRES_HOST", "localhost")
 	PostgresqlPort     = getEnv("POSTGRES_PORT", "5432")
+	PostgresqlDatabase = getEnv("POSTGRES_DB", "postgres")
 	PostgresqlUsername = getEnv("POSTGRES_USERNAME", "postgres")
 	PostgresqlPassword = getEnv("POSTGRES_PASSWORD", "postgres")
 )
@@ -178,7 +179,7 @@ func (s *server) Welcome(w http.ResponseWriter, r *http.Request) {
 var embedMigrations embed.FS
 
 func NewDB() *sql.DB {
-	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/postgres?sslmode=disable"
+	connStr := "postgresql://" + PostgresqlUsername + ":" + PostgresqlPassword + "@" + PostgresqlHost + ":" + PostgresqlPort + "/" + PostgresqlDatabase + "?sslmode=disable"
 	log.Printf("Connecting to Database: %s.", connStr)
 
 	// Open a new database connection

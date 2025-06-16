@@ -1,31 +1,51 @@
 # Appointments Service
 
-This service allow users to schedule new appointments and list them all. 
+This application is part of the Min Salus system and provides the functionality for managing appointments. It's part of the project built in the [Developer Experience on Kubernetes](https://www.manning.com/books/developer-experience-on-kubernetes) book by [Mauricio Salatino](https://salaboy.com) and [Thomas Vitale](https://www.thomasvitale.com).
 
+## HTTP API
 
-## Create a container with `ko`
+| Endpoint	      | Method   | Req. body   | Status | Resp. body     | Description    		   	              |
+|:---------------:|:--------:|:-----------:|:------:|:--------------:|:-------------------------------------|
+| `/`             | `GET`    |             | 200    | String         | Welcome message.                     |
+| `/appointments` | `GET`    |             | 200    | Appointment[]  | Get all the booked appointments.     |
+| `/appointments` | `POST`   | Appointment | 201    | Appointment    | Book a new appointment.              |
+| `/appointments` | `DELETE` |             | 204    |                | Delete all appointments.             |
 
-Running the following command creates a container for all platforms (amd64, arm64) and push it to Docker Hub if your account is configured (with `docker login`)
+## Build (Pack)
 
-```shell
-ko build appointments.go --platform=all
+Build the application as a container image using the Pack CLI:
+
+```shell script
+pack build appointments:0.0.1-SNAPSHOT
 ```
 
-Then you can run this container locally by running: 
+## Build (ko)
 
-```
-docker run docker.io/salaboy/appointments.go-6ae2051fa00e6032a383a1bd2a5aa1b4@sha256:ce6e8acd4395196a9f3b554115bc728777540c2cdd2cf77b741a1ceedf4263a7
-Unable to find image 'salaboy/appointments.go-6ae2051fa00e6032a383a1bd2a5aa1b4@sha256:ce6e8acd4395196a9f3b554115bc728777540c2cdd2cf77b741a1ceedf4263a7' locally
-9816217da073: Download complete 
-493349de57e3: Download complete 
-250c06f7c38e: Download complete 
-b1e5889354e0: Download complete 
-2025/03/29 10:14:56 Starting Appointments Service in Port: 8081
-2025/03/29 10:14:56 Connecting to Database: postgresql://postgres:postgres@localhost:5432/postgres?sslmode=disable.
-2025/03/29 10:14:56 dial tcp [::1]:5432: connect: connection refused
-```
-The container try to starts the service but it fails because there is no PostgreSQL running. 
+Build the application as a container image using the ko CLI:
 
+```shell script
+ko build --local -B -t 0.0.1-SNAPSHOT
+```
+
+## Run (Compose)
+
+Run the application and its dependencies using Compose:
+
+```shell script
+podman compose up -d
+```
+
+Book an appointment:
+
+```shell script
+http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
+```
+
+Stop the application and its dependencies:
+
+```shell script
+podman compose down
+```
 
 ## Deploy on Kubernetes
 
