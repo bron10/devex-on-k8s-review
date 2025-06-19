@@ -47,49 +47,7 @@ Stop the application and its dependencies:
 podman compose down
 ```
 
-## Other
-
-Get the welcome message:
-
-```shell script
-http :8081
-```
-
-Book an appointment:
-
-```shell script
-http :8081/appointments patientId=42 appointmentDate="2028-02-29T12:00:00Z"
-```
-
-Book an appointment with a category:
-
-```shell script
-http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
-```
-
-Get all appointments:
-
-```shell script
-http :8081/appointments
-```
-
-Delete all appointments:
-
-```shell script
-http DELETE :8081/appointments
-```
-
-## Run (Skaffold)
-
-Run the application in development mode on Kubernetes, with live reload:
-
-```shell script
-skaffold dev --port-forward
-```
-
-The application will start on port `8081` by default and the process will keep running, watching for changes in the source code. When you're done, stop the application process with `Ctrl+C`.
-
-## Run (JKube)
+## Run (Kubernetes with Buildpacks)
 
 First, provision a PostgreSQL database in your local Kubernetes cluster:
 
@@ -97,22 +55,66 @@ First, provision a PostgreSQL database in your local Kubernetes cluster:
 kubectl apply -f config/db.yml
 ```
 
-Build the application as a container image:
+Load the container image built previously with Buildpacks:
 
 ```shell script
-./gradlew bootBuildImage
-```
-
-Then, load the image to the local cluster:
-
-```shell
 kind load docker-image appointments:0.0.1-SNAPSHOT --name devex-cluster
 ```
 
-Next, generate the Kubernetes manifests and deploy the application with JKube.
+Deploy the application to Kubernetes:
+
+```shell script
+kubectl apply -f config
+```
+
+Validate the resources created:
+
+```shell script
+kubectl get all -l app=appointments
+```
+
+Book an appointment:
+
+```shell script
+http :9090/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
+```
+
+Undeploy the application and its dependencies:
+
+```shell script
+kubectl delete -f config
+```
+
+## Run (Kubernetes with JKube)
+
+First, provision a PostgreSQL database in your local Kubernetes cluster:
+
+```shell script
+kubectl apply -f config/db.yml
+```
+
+Load the container image built previously with Buildpacks:
+
+```shell script
+kind load docker-image appointments:0.0.1-SNAPSHOT --name devex-cluster
+```
+
+Generate the Kubernetes manifests and deploy the application with JKube.
 
 ```shell
 ./gradlew k8sResource k8sApply
+```
+
+Validate the resources created:
+
+```shell script
+kubectl get all -l app=appointments
+```
+
+Book an appointment:
+
+```shell script
+http :9090/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
 ```
 
 When you're done, you can undeploy the application as follows:
@@ -127,37 +129,23 @@ And finally, unprovision the PostgreSQL database:
 kubectl delete -f config/db.yml
 ```
 
-## Run (Manifests)
+## Run (Skaffold)
 
-First, provision a PostgreSQL database in your local Kubernetes cluster:
-
-```shell script
-kubectl apply -f config/db.yml
-```
-
-Build the application as a container image:
+Run the application in development mode on Kubernetes, with live reload:
 
 ```shell script
-./gradlew bootBuildImage
+skaffold dev --port-forward
 ```
 
-Then, load the image to the local cluster. Due to some issues with the `kind` CLI, you need to run the command twice to ensure the image is loaded correctly.
+The application will start on port `8081` by default and the process will keep running, watching for changes in the source code.
 
-```shell
-kind load docker-image appointments:0.0.1-SNAPSHOT --name devex-cluster
+Book an appointment:
+
+```shell script
+http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
 ```
 
-Next, deploy the application using the Kubernetes manifests provided in the `config` directory:
-
-```shell
-kubectl apply -f config
-```
-
-When you're done, you can undeploy the application as follows:
-
-```shell
-kubectl delete -f config
-```
+When you're done, stop the application process with `Ctrl+C`.
 
 ## Clean
 

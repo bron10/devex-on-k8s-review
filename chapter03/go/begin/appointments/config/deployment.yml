@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: appointments
-          image: ko://github.com/devex-on-k8s/book/appointments
+          image: ko.local/appointments:0.0.1-SNAPSHOT
+          #image: ko://github.com/devex-on-k8s/book/appointments
           imagePullPolicy: IfNotPresent
           securityContext:
             runAsUser: 1001

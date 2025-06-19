@@ -4,6 +4,8 @@ set -euo pipefail
 
 echo "\n📦 Initializing Kubernetes cluster..."
 
+kind delete cluster --name devex-cluster
+
 kind create cluster --config kind-config.yml
 
 echo "\n🔌 Installing Contour Ingress..."

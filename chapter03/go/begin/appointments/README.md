@@ -47,50 +47,58 @@ Stop the application and its dependencies:
 podman compose down
 ```
 
-## Deploy on Kubernetes
+## Run (Kubernetes with ko)
 
-Create a Kind cluster with: 
+Create a PostgreSQL database:
 
-```shell
-kind create cluster
+```shell script
+kubectl apply -f config/db.yml
 ```
 
-You should see something like this: 
+Load the container image built previously with `ko`:
 
-```shell
-Creating cluster "kind" ...
- ✓ Ensuring node image (kindest/node:v1.27.3) 🖼
- ✓ Preparing nodes 📦  
- ✓ Writing configuration 📜 
- ✓ Starting control-plane 🕹️ 
- ✓ Installing CNI 🔌 
- ✓ Installing StorageClass 💾 
-Set kubectl context to "kind-kind"
-You can now use your cluster with:
-
-kubectl cluster-info --context kind-kind
-
-Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
+```shell script
+kind load docker-image ko.local/appointments:0.0.1-SNAPSHOT --name devex-cluster
 ```
 
-Then we can build, package and deploy the appointments service to our cluster by running: 
+Deploy the application to Kubernetes:
 
-
-```shell
-ko apply -f kubernetes/
+```shell script
+kubectl apply -f config
 ```
 
-This also should fail on Kubernetes, you can check the logs: 
+Validate the resources created:
 
-```
-k logs -f appointments-788bcd88fd-5nr78
-2025/03/29 10:27:02 Starting Appointments Service in Port: 8081
-2025/03/29 10:27:02 Connecting to Database: postgresql://postgres:postgres@localhost:5432/postgres?sslmode=disable.
-2025/03/29 10:27:02 dial tcp [::1]:5432: connect: connection refused
+```shell script
+kubectl get all -l app=appointments
 ```
 
-Installing PostgreSQL using Helm:
+Book an appointment:
 
-```shell
-helm install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql
+```shell script
+http :9090/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
 ```
+
+You can rely on ko to build the container image, load it into the cluster, and deploy the application in a single command. First, change the `image` field in the `config/deployment.yml` file to use the `ko://github.com/devex-on-k8s/book/appointments` reference instead of `ko.local/appointments:0.0.1-SNAPSHOT`. Then run:
+
+```shell script
+ko apply --local -f config/deployment.yml
+```
+
+## Run (Skaffold)
+
+Run the application in development mode on Kubernetes, with live reload:
+
+```shell script
+skaffold dev --port-forward
+```
+
+The application will start on port `8081` by default and the process will keep running, watching for changes in the source code.
+
+Book an appointment:
+
+```shell script
+http :8081/appointments patientId=42 category="cardiology" appointmentDate="2028-02-29T12:00:00Z"
+```
+
+When you're done, stop the application process with `Ctrl+C`.
