@@ -12,6 +12,7 @@ kubernetes-helm.pkg-path = "kubernetes-helm"
 kustomize.pkg-path = "kustomize"
 pack.pkg-path = "pack"
 skaffold.pkg-path = "skaffold"
+vscode-with-extensions.pkg-path = "vscode-with-extensions"
 
 [vars]
 FLOX_DISABLE_METRICS="true"

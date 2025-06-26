@@ -4,6 +4,7 @@ version = 1
 graalvm-ce.pkg-path = "graalvm-ce"
 graalvm-ce.version = "24.0.1"
 httpie.pkg-path = "httpie"
+vscode-with-extensions.pkg-path = "vscode-with-extensions"
 
 [vars]
 FLOX_DISABLE_METRICS="true"

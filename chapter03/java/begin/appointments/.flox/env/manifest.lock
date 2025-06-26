@@ -36,6 +36,9 @@
       },
       "skaffold": {
         "pkg-path": "skaffold"
+      },
+      "vscode-with-extensions": {
+        "pkg-path": "vscode-with-extensions"
       }
     },
     "vars": {
@@ -66,6 +69,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:50.879999Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -97,6 +101,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:41:58.069576Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -128,6 +133,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:21.106875Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -159,6 +165,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:41.332868Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -190,6 +197,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:51.512889Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -219,6 +227,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:41:59.442360Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -248,6 +257,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:21.767644Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -277,6 +287,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:42.881547Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -306,6 +317,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:51.678748Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -336,6 +348,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:00.136871Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -366,6 +379,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:21.938164Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -396,6 +410,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:43.635624Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -426,6 +441,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.005156Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -455,6 +471,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.013893Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -484,6 +501,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.264423Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -513,6 +531,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.599716Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -542,6 +561,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.012911Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -571,6 +591,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.038944Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -600,6 +621,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.272354Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -629,6 +651,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.628387Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -658,6 +681,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.063690Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -690,6 +714,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.154292Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -722,6 +747,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.324148Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -754,6 +780,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.752241Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -786,6 +813,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.070683Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -815,6 +843,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.165145Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -844,6 +873,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.331299Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -873,6 +903,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.763826Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -902,6 +933,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.076474Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -931,6 +963,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.174599Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -960,6 +993,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.337208Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -989,6 +1023,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.773797Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1018,6 +1053,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:52.090005Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1047,6 +1083,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:01.196893Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1076,6 +1113,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:22.350965Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1105,6 +1143,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:44.797525Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1134,6 +1173,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:23:54.825526Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1163,6 +1203,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:42:10.860201Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1192,6 +1233,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:58:25.104271Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1221,6 +1263,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:17:56.598367Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1250,6 +1293,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:24:31.436757Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1279,6 +1323,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:43:05.841205Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1308,6 +1353,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T04:59:01.358780Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1337,6 +1383,7 @@
       "rev_date": "2025-06-07T08:35:48Z",
       "scrape_date": "2025-06-09T05:18:55.913283Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
@@ -1346,6 +1393,126 @@
       ],
       "outputs": {
         "out": "/nix/store/hkrdg8qzvx8r2q881mzg2xw0p40cnyhx-skaffold-2.16.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "vscode-with-extensions",
+      "broken": false,
+      "derivation": "/nix/store/wimcs7fsyih1w8h6nydmx58albg32csa-vscode-with-extensions-1.100.2.drv",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "install_id": "vscode-with-extensions",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "name": "vscode-with-extensions-1.100.2",
+      "pname": "vscode-with-extensions",
+      "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "rev_count": 811950,
+      "rev_date": "2025-06-07T08:35:48Z",
+      "scrape_date": "2025-06-09T04:24:53.214269Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1.100.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vv470zl9viy2p37ry6xwrx89y6h5acvm-vscode-with-extensions-1.100.2"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "vscode-with-extensions",
+      "broken": false,
+      "derivation": "/nix/store/xr83i0cr1b968h7s8q2akvsjvndfyhmx-vscode-with-extensions-1.100.2.drv",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "install_id": "vscode-with-extensions",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "name": "vscode-with-extensions-1.100.2",
+      "pname": "vscode-with-extensions",
+      "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "rev_count": 811950,
+      "rev_date": "2025-06-07T08:35:48Z",
+      "scrape_date": "2025-06-09T04:43:35.525282Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1.100.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vrmvhsigl4030fg3fcfs69nppclms8fc-vscode-with-extensions-1.100.2"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "vscode-with-extensions",
+      "broken": false,
+      "derivation": "/nix/store/njfw05sxprzbxcw11li5yh7c0caaas81-vscode-with-extensions-1.100.2.drv",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "install_id": "vscode-with-extensions",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "name": "vscode-with-extensions-1.100.2",
+      "pname": "vscode-with-extensions",
+      "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "rev_count": 811950,
+      "rev_date": "2025-06-07T08:35:48Z",
+      "scrape_date": "2025-06-09T04:59:23.017474Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1.100.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ys3zcn548nfsvyrq67yx0rrxgplzr6lg-vscode-with-extensions-1.100.2"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "vscode-with-extensions",
+      "broken": false,
+      "derivation": "/nix/store/9innk6ick6rph8dgv2ca8l6m37421lhg-vscode-with-extensions-1.100.2.drv",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "install_id": "vscode-with-extensions",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "name": "vscode-with-extensions-1.100.2",
+      "pname": "vscode-with-extensions",
+      "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+      "rev_count": 811950,
+      "rev_date": "2025-06-07T08:35:48Z",
+      "scrape_date": "2025-06-09T05:19:27.711595Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1.100.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/nzccwblfw2ii2ihav1nckyisxbv9c0i6-vscode-with-extensions-1.100.2"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

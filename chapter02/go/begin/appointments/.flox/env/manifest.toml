@@ -3,6 +3,7 @@ version = 1
 [install]
 go.pkg-path = "go"
 httpie.pkg-path = "httpie"
+vscode-with-extensions.pkg-path = "vscode-with-extensions"
 
 [vars]
 FLOX_DISABLE_METRICS="true"
