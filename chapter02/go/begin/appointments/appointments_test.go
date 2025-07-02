@@ -20,13 +20,11 @@ func testServer() *httptest.Server {
 
 func Test_API(t *testing.T) {
 
-	//
-
 	// test server
 	ts := testServer()
 	defer ts.Close()
 
-	t.Run("It should empty when a GET request is made to '/appointments'", func(t *testing.T) {
+	t.Run("It should return empty when a GET request is made to '/appointments'", func(t *testing.T) {
 		// prepare
 		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments", ts.URL), nil)
 
@@ -52,7 +50,7 @@ func Test_API(t *testing.T) {
 
 	})
 
-	t.Run("It should return 200 when a POST request is made to '/appointments' ", func(t *testing.T) {
+	t.Run("It should return 200 when a POST request is made to '/appointments'", func(t *testing.T) {
 		// prepare
 		req, _ := http.NewRequest(http.MethodDelete, fmt.Sprintf("%s/appointments", ts.URL), nil)
 
