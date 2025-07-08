@@ -10,8 +10,8 @@
       "httpie": {
         "pkg-path": "httpie"
       },
-      "vscode-with-extensions": {
-        "pkg-path": "vscode-with-extensions"
+      "vscode-java-flake": {
+        "flake": "github:thomasvitale/vscode-java-flake"
       }
     },
     "vars": {
@@ -30,17 +30,17 @@
     {
       "attr_path": "graalvm-ce",
       "broken": false,
-      "derivation": "/nix/store/93vcfdls2mw351p7hi7lnl02035lky3v-graalvm-ce-24.0.1.drv",
+      "derivation": "/nix/store/zxdfn6fp81swvlj9qkr2zhl2zk1jrk7c-graalvm-ce-24.0.1.drv",
       "description": "High-Performance Polyglot VM",
       "install_id": "graalvm-ce",
       "license": "[ UPL-1.0, GPL-2.0-with-classpath-exception, BSD-3-Clause ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "graalvm-ce-24.0.1",
       "pname": "graalvm-ce",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:36:16.487175Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:14:35.415402Z",
       "stabilities": [
         "unstable"
       ],
@@ -50,7 +50,7 @@
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/jiv5r4l347h7s5gkplszkkji3si9cys3-graalvm-ce-24.0.1"
+        "out": "/nix/store/sqgz19w406jwdrm42yq3a8qc3f6vdgsn-graalvm-ce-24.0.1"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -59,17 +59,17 @@
     {
       "attr_path": "graalvm-ce",
       "broken": false,
-      "derivation": "/nix/store/4a2ad10wxqkmzlky2spprl00qi1lwm14-graalvm-ce-24.0.1.drv",
+      "derivation": "/nix/store/90h7fnyb6d0cl61azf4bampf3rzm49i2-graalvm-ce-24.0.1.drv",
       "description": "High-Performance Polyglot VM",
       "install_id": "graalvm-ce",
       "license": "[ UPL-1.0, GPL-2.0-with-classpath-exception, BSD-3-Clause ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "graalvm-ce-24.0.1",
       "pname": "graalvm-ce",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:54:49.764160Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:34:26.654816Z",
       "stabilities": [
         "unstable"
       ],
@@ -79,7 +79,7 @@
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/md9b8faqbhx1rh2jgb0i1kkga2c3wxnz-graalvm-ce-24.0.1"
+        "out": "/nix/store/y0wyggm9ln58rl0kahpf6d47aqy99n7n-graalvm-ce-24.0.1"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -88,17 +88,17 @@
     {
       "attr_path": "graalvm-ce",
       "broken": false,
-      "derivation": "/nix/store/yml60wls1mrailw7xizcg9q8di0k6v7g-graalvm-ce-24.0.1.drv",
+      "derivation": "/nix/store/3zys8ph1vh1jgsrijz98s0s026kqi4pc-graalvm-ce-24.0.1.drv",
       "description": "High-Performance Polyglot VM",
       "install_id": "graalvm-ce",
       "license": "[ UPL-1.0, GPL-2.0-with-classpath-exception, BSD-3-Clause ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "graalvm-ce-24.0.1",
       "pname": "graalvm-ce",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:12:23.748935Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:52:52.978766Z",
       "stabilities": [
         "unstable"
       ],
@@ -108,7 +108,7 @@
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ygsbqnfxa82jq7ckdi0xahm4pzgd2fx6-graalvm-ce-24.0.1"
+        "out": "/nix/store/5bzbamx31phsfgqp26jniw8iv57fwniv-graalvm-ce-24.0.1"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -117,17 +117,17 @@
     {
       "attr_path": "graalvm-ce",
       "broken": false,
-      "derivation": "/nix/store/lqhsqd6d0aaz55xr3lrphc1a5ildbqwi-graalvm-ce-24.0.1.drv",
+      "derivation": "/nix/store/n423y1jgfjf0frk8i7bkm4y7v309pgii-graalvm-ce-24.0.1.drv",
       "description": "High-Performance Polyglot VM",
       "install_id": "graalvm-ce",
       "license": "[ UPL-1.0, GPL-2.0-with-classpath-exception, BSD-3-Clause ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "graalvm-ce-24.0.1",
       "pname": "graalvm-ce",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:32:29.371192Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T06:14:18.598971Z",
       "stabilities": [
         "unstable"
       ],
@@ -137,7 +137,7 @@
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/8ca2h2dk00iwn725dr46n7zd1j18jvn8-graalvm-ce-24.0.1"
+        "out": "/nix/store/qsp6zragx3aymkqc03ywhyc9k7pkrr0f-graalvm-ce-24.0.1"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -146,17 +146,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/bdxg5rifnxjjnfcpfsh8pi12g2giry00-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/mqkqr0icq7nnyljhjg1zliybryshcfml-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:36:16.655652Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:14:35.583063Z",
       "stabilities": [
         "unstable"
       ],
@@ -166,8 +166,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/xy7gki5ak3v8d2yy7p6vkh4vw000c8a9-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/sh2p1km67z504fn1gfdwf01jahqikwfr-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/yh60x16ckpcxxwpykmncxwrnk9vwqrxx-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/gj40gmv0y5i479iiy9rm69j8bkxvjgk1-python3.13-httpie-3.2.4"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -176,17 +176,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/1zy4iqjkk7zsgbgrzb7qxiqfv95f1l6f-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/zp7g2n7krgsxbyiwpwaakmd43m024r60-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:54:50.471509Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:34:27.395946Z",
       "stabilities": [
         "unstable"
       ],
@@ -196,8 +196,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/zyi6pl0iwvw823j8m6wr6fs6yc576pag-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/93xhm7h1lchy5klvqhzbingayaqh4l8k-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/cskfg46k44dfsc5pvsg1ci7z7z4p2k6s-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/74ws7mk8j7jwc0biabazf3k8wbm99cyx-python3.13-httpie-3.2.4"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -206,17 +206,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/5dgvdy43i6j9ln82v6ncrmqrahlza1j9-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/fj8njr3nx3knmpxgj0nyci8c9nw7gffh-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:12:23.925388Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:52:53.152521Z",
       "stabilities": [
         "unstable"
       ],
@@ -226,8 +226,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/zfklbgb73zpagkrx4229bsyijclkacxn-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/miii02j3q046j8y206imqhyqr62j3kd9-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/8vszprl2mbrsa9fam82fby244hrlljmc-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/h0dmgsrp2l9rl05xhl0bc87gif7vav8q-python3.13-httpie-3.2.4"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -236,17 +236,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/9wwghymrb5c0illk9as0abr9dj075qrz-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/m6x30zjnmag62gksdfrsky0f7v1bpb3i-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:32:30.139580Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T06:14:19.350988Z",
       "stabilities": [
         "unstable"
       ],
@@ -256,127 +256,107 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/c183p34628v1c5adl8zf0pqgabbd5wh6-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/klvk4jm9vpjv4jmwqsxk6d4dwl77b3gp-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/aj9irg0vqxs94k8v967n6kmddlgni0qf-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/hdmyiyglh84a6x8mr7l67vs01l2zjnig-python3.13-httpie-3.2.4"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/bgpb6idrb1c4sd6m4pr0py51qkxpsn40-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:37:18.622061Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-java-flake",
+      "locked-url": "github:thomasvitale/vscode-java-flake/42eb6f1945f20353183439fa33072b796729c4c6?narHash=sha256-lQeaMKlb6KvIX9qcKbz8oOUNvgGTYiLjI5Ds9TVt%2B%2BE%3D",
+      "flake-description": "VSCode with Java extensions",
+      "locked-flake-attr-path": "packages.aarch64-darwin.default",
+      "derivation": "/nix/store/4qknkizf6a1vsv45vh4v0dl4l3nn1ij2-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/gr3kcdw6bryvzm3qyjv0kywfhq75wy09-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/28wq00klrhnvxwd0znn34wagk1qxpqpx-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
       "system": "aarch64-darwin",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/ab34qf1qag855v0wkn2z293vq6ixpdrr-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:56:27.288160Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-java-flake",
+      "locked-url": "github:thomasvitale/vscode-java-flake/42eb6f1945f20353183439fa33072b796729c4c6?narHash=sha256-lQeaMKlb6KvIX9qcKbz8oOUNvgGTYiLjI5Ds9TVt%2B%2BE%3D",
+      "flake-description": "VSCode with Java extensions",
+      "locked-flake-attr-path": "packages.aarch64-linux.default",
+      "derivation": "/nix/store/59xfq0nn2d4cx1090ixyn4hkpyz7a7yi-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/zg03wm84j8xw4yv13rzf02vyligzwcd0-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/7l9gvlfy249821f1a4vjcngha7h6bl17-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
       "system": "aarch64-linux",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/n2mapmi56nv9zx0pikln26anb235xzpz-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:13:27.602163Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-java-flake",
+      "locked-url": "github:thomasvitale/vscode-java-flake/42eb6f1945f20353183439fa33072b796729c4c6?narHash=sha256-lQeaMKlb6KvIX9qcKbz8oOUNvgGTYiLjI5Ds9TVt%2B%2BE%3D",
+      "flake-description": "VSCode with Java extensions",
+      "locked-flake-attr-path": "packages.x86_64-darwin.default",
+      "derivation": "/nix/store/z5jxhnlvh1ybbv99ir7yd639pi2sa0wa-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/w7rvlswbp23p0ig4ph2smxyv6j87vf4l-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/b2kz4vh331l5jls29vvnjjf3d5z4cik3-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-darwin",
       "system": "x86_64-darwin",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/hbs82fn40cavhm7sw6bca1577sbl8qym-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:34:15.429012Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-java-flake",
+      "locked-url": "github:thomasvitale/vscode-java-flake/42eb6f1945f20353183439fa33072b796729c4c6?narHash=sha256-lQeaMKlb6KvIX9qcKbz8oOUNvgGTYiLjI5Ds9TVt%2B%2BE%3D",
+      "flake-description": "VSCode with Java extensions",
+      "locked-flake-attr-path": "packages.x86_64-linux.default",
+      "derivation": "/nix/store/bs3ijhr2xca6c16ihd6nwsd47ng1jd4p-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/fy99jyfpsh5walsnq08i7q13fn769ii0-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/gb64y46ygbxkxa26qx2s5w9chiyyyfdz-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
       "system": "x86_64-linux",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     }
   ]

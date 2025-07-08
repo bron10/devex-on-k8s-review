@@ -3,7 +3,7 @@ version = 1
 [install]
 go.pkg-path = "go"
 httpie.pkg-path = "httpie"
-vscode-with-extensions.pkg-path = "vscode-with-extensions"
+vscode-go-flake.flake = "github:thomasvitale/vscode-go-flake"
 
 [vars]
 FLOX_DISABLE_METRICS="true"

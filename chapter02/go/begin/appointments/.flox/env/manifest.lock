@@ -9,8 +9,8 @@
       "httpie": {
         "pkg-path": "httpie"
       },
-      "vscode-with-extensions": {
-        "pkg-path": "vscode-with-extensions"
+      "vscode-go-flake": {
+        "flake": "github:thomasvitale/vscode-go-flake"
       }
     },
     "vars": {
@@ -29,27 +29,27 @@
     {
       "attr_path": "go",
       "broken": false,
-      "derivation": "/nix/store/c6h9pn9a4mwgz63qdiw70ac6fv7341v9-go-1.24.3.drv",
+      "derivation": "/nix/store/7i15lyhdhcpr16yqxlxm2ipjdn560w5x-go-1.24.4.drv",
       "description": "Go Programming language",
       "install_id": "go",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "go-1.24.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "name": "go-1.24.4",
       "pname": "go",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:36:16.406321Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:14:35.338088Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "1.24.3",
+      "version": "1.24.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ps3admpzmc1ryvn9q7sw5xfd94dkrb3f-go-1.24.3"
+        "out": "/nix/store/rq7irijkj3nhapmjcv9d96xgkisj55x2-go-1.24.4"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -58,27 +58,27 @@
     {
       "attr_path": "go",
       "broken": false,
-      "derivation": "/nix/store/isgn9dhrlr1mix3swwr5h3aws839bafc-go-1.24.3.drv",
+      "derivation": "/nix/store/qhrgsw4303gv415fl0q48qki3xjrysn2-go-1.24.4.drv",
       "description": "Go Programming language",
       "install_id": "go",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "go-1.24.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "name": "go-1.24.4",
       "pname": "go",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:54:49.625895Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:34:26.518968Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "1.24.3",
+      "version": "1.24.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/45bnqhyyq40p91k3cjw0farx3hn1swx6-go-1.24.3"
+        "out": "/nix/store/9f64p4ip4iz2nba4wyhn1baq6b6pb6ss-go-1.24.4"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -87,27 +87,27 @@
     {
       "attr_path": "go",
       "broken": false,
-      "derivation": "/nix/store/jfgcva919a7bz5zr781cgar6jn6vag9s-go-1.24.3.drv",
+      "derivation": "/nix/store/c3247n9gz359k8w7m0x690ip4d1h0xj2-go-1.24.4.drv",
       "description": "Go Programming language",
       "install_id": "go",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "go-1.24.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "name": "go-1.24.4",
       "pname": "go",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:12:23.667232Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:52:52.898278Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "1.24.3",
+      "version": "1.24.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/9z2kb6hxij7pqi0fgcn9ijhpb7ajpazs-go-1.24.3"
+        "out": "/nix/store/n0gqcdpdk0ap2ikasi36r0szwpk2g35q-go-1.24.4"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -116,27 +116,27 @@
     {
       "attr_path": "go",
       "broken": false,
-      "derivation": "/nix/store/8bavsrkczap815c77n4xyvzz4y7rx0r0-go-1.24.3.drv",
+      "derivation": "/nix/store/55apw0ij2wcvrvmkvdgi6ixx7nqqw0hh-go-1.24.4.drv",
       "description": "Go Programming language",
       "install_id": "go",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "go-1.24.3",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "name": "go-1.24.4",
       "pname": "go",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:32:29.219901Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T06:14:18.452003Z",
       "stabilities": [
         "unstable"
       ],
       "unfree": false,
-      "version": "1.24.3",
+      "version": "1.24.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/5xvi25nqmbrg58aixp4zgczilfnp7pwg-go-1.24.3"
+        "out": "/nix/store/mdn9hnvf0qmxywbrpbywmxww2adxdn5v-go-1.24.4"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -145,17 +145,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/bdxg5rifnxjjnfcpfsh8pi12g2giry00-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/mqkqr0icq7nnyljhjg1zliybryshcfml-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:36:16.655652Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:14:35.583063Z",
       "stabilities": [
         "unstable"
       ],
@@ -165,8 +165,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/xy7gki5ak3v8d2yy7p6vkh4vw000c8a9-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/sh2p1km67z504fn1gfdwf01jahqikwfr-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/yh60x16ckpcxxwpykmncxwrnk9vwqrxx-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/gj40gmv0y5i479iiy9rm69j8bkxvjgk1-python3.13-httpie-3.2.4"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -175,17 +175,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/1zy4iqjkk7zsgbgrzb7qxiqfv95f1l6f-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/zp7g2n7krgsxbyiwpwaakmd43m024r60-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:54:50.471509Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:34:27.395946Z",
       "stabilities": [
         "unstable"
       ],
@@ -195,8 +195,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/zyi6pl0iwvw823j8m6wr6fs6yc576pag-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/93xhm7h1lchy5klvqhzbingayaqh4l8k-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/cskfg46k44dfsc5pvsg1ci7z7z4p2k6s-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/74ws7mk8j7jwc0biabazf3k8wbm99cyx-python3.13-httpie-3.2.4"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -205,17 +205,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/5dgvdy43i6j9ln82v6ncrmqrahlza1j9-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/fj8njr3nx3knmpxgj0nyci8c9nw7gffh-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:12:23.925388Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T05:52:53.152521Z",
       "stabilities": [
         "unstable"
       ],
@@ -225,8 +225,8 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/zfklbgb73zpagkrx4229bsyijclkacxn-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/miii02j3q046j8y206imqhyqr62j3kd9-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/8vszprl2mbrsa9fam82fby244hrlljmc-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/h0dmgsrp2l9rl05xhl0bc87gif7vav8q-python3.13-httpie-3.2.4"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -235,17 +235,17 @@
     {
       "attr_path": "httpie",
       "broken": false,
-      "derivation": "/nix/store/9wwghymrb5c0illk9as0abr9dj075qrz-python3.12-httpie-3.2.4.drv",
+      "derivation": "/nix/store/m6x30zjnmag62gksdfrsky0f7v1bpb3i-python3.13-httpie-3.2.4.drv",
       "description": "Command line HTTP client whose goal is to make CLI human-friendly",
       "install_id": "httpie",
       "license": "BSD-3-Clause",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
       "name": "httpie-3.2.4",
       "pname": "httpie",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:32:30.139580Z",
+      "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+      "rev_count": 826054,
+      "rev_date": "2025-07-06T08:59:25Z",
+      "scrape_date": "2025-07-08T06:14:19.350988Z",
       "stabilities": [
         "unstable"
       ],
@@ -255,127 +255,107 @@
         "out"
       ],
       "outputs": {
-        "dist": "/nix/store/c183p34628v1c5adl8zf0pqgabbd5wh6-python3.12-httpie-3.2.4-dist",
-        "out": "/nix/store/klvk4jm9vpjv4jmwqsxk6d4dwl77b3gp-python3.12-httpie-3.2.4"
+        "dist": "/nix/store/aj9irg0vqxs94k8v967n6kmddlgni0qf-python3.13-httpie-3.2.4-dist",
+        "out": "/nix/store/hdmyiyglh84a6x8mr7l67vs01l2zjnig-python3.13-httpie-3.2.4"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/bgpb6idrb1c4sd6m4pr0py51qkxpsn40-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:37:18.622061Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-go-flake",
+      "locked-url": "github:thomasvitale/vscode-go-flake/41496e4dc3d6969ff933bbcd931d00e607099280?narHash=sha256-1K9DApwVC51A7pwMoNrl7SksR0Mg17/FPvCo7k/C9ng%3D",
+      "flake-description": "VSCode with Go extensions",
+      "locked-flake-attr-path": "packages.aarch64-darwin.default",
+      "derivation": "/nix/store/rxirdnx17n00657xkk057c58ayczkhzc-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/21ixmxh3vz87vbn53gqzgs07i0nhj6gd-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/28wq00klrhnvxwd0znn34wagk1qxpqpx-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
       "system": "aarch64-darwin",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/ab34qf1qag855v0wkn2z293vq6ixpdrr-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T00:56:27.288160Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-go-flake",
+      "locked-url": "github:thomasvitale/vscode-go-flake/41496e4dc3d6969ff933bbcd931d00e607099280?narHash=sha256-1K9DApwVC51A7pwMoNrl7SksR0Mg17/FPvCo7k/C9ng%3D",
+      "flake-description": "VSCode with Go extensions",
+      "locked-flake-attr-path": "packages.aarch64-linux.default",
+      "derivation": "/nix/store/w29p2wqz9ywgnkaarm72pfsbphrql06b-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/3v6wn7p6ms3cv1l7g8i35wp9y2p37zh9-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/7l9gvlfy249821f1a4vjcngha7h6bl17-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
       "system": "aarch64-linux",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/n2mapmi56nv9zx0pikln26anb235xzpz-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:13:27.602163Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-go-flake",
+      "locked-url": "github:thomasvitale/vscode-go-flake/41496e4dc3d6969ff933bbcd931d00e607099280?narHash=sha256-1K9DApwVC51A7pwMoNrl7SksR0Mg17/FPvCo7k/C9ng%3D",
+      "flake-description": "VSCode with Go extensions",
+      "locked-flake-attr-path": "packages.x86_64-darwin.default",
+      "derivation": "/nix/store/bl5w04pmawvrxg6yqjm8ficmsi4dxqwv-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/kzm9vfzqy6djkjmxcrswf984nc0plsaj-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/b2kz4vh331l5jls29vvnjjf3d5z4cik3-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-darwin",
       "system": "x86_64-darwin",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     },
     {
-      "attr_path": "vscode-with-extensions",
-      "broken": false,
-      "derivation": "/nix/store/hbs82fn40cavhm7sw6bca1577sbl8qym-vscode-with-extensions-1.101.0.drv",
-      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
-      "install_id": "vscode-with-extensions",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "name": "vscode-with-extensions-1.101.0",
-      "pname": "vscode-with-extensions",
-      "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
-      "rev_count": 816272,
-      "rev_date": "2025-06-17T04:31:58Z",
-      "scrape_date": "2025-06-18T01:34:15.429012Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "1.101.0",
-      "outputs_to_install": [
+      "install_id": "vscode-go-flake",
+      "locked-url": "github:thomasvitale/vscode-go-flake/41496e4dc3d6969ff933bbcd931d00e607099280?narHash=sha256-1K9DApwVC51A7pwMoNrl7SksR0Mg17/FPvCo7k/C9ng%3D",
+      "flake-description": "VSCode with Go extensions",
+      "locked-flake-attr-path": "packages.x86_64-linux.default",
+      "derivation": "/nix/store/1a57ympsa4x8rkcdmql8shsv98g9r1j4-vscode-with-extensions-1.101.0.drv",
+      "outputs": {
+        "out": "/nix/store/k8bl5hsl7xmbzydgs8m6h2d6gis4fa2l-vscode-with-extensions-1.101.0"
+      },
+      "output-names": [
         "out"
       ],
-      "outputs": {
-        "out": "/nix/store/gb64y46ygbxkxa26qx2s5w9chiyyyfdz-vscode-with-extensions-1.101.0"
-      },
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
       "system": "x86_64-linux",
-      "group": "toplevel",
+      "name": "vscode-with-extensions-1.101.0",
+      "description": "Open source source code editor developed by Microsoft for Windows,\nLinux and macOS\n",
+      "broken": false,
+      "unfree": true,
       "priority": 5
     }
   ]
